@@ -1,0 +1,15 @@
+<h1><p>{{vm.plane.name}}
+   
+</h1>
+<p>
+    ->   Country  :  {{vm.plane.country}}<br/>
+    ->   Service start  :  {{vm.plane.created}}<br/>
+    ->   Used by  :
+    <ol>
+        <li ng-repeat="plane in vm.plane.UserCountries">
+            {{plane.name}}<br/>
+            Fleet Number : {{plane.fleetNum}}
+        </li>
+    </ol>
+    
+</p>

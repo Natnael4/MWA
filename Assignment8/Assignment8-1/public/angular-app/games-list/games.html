@@ -2,7 +2,7 @@
 
 
 <ul>
-    <li ng-repeat="game in vm.games">
+    <li ng-repeat="game in vm.games | orderBy:'title'">
         <a ng-href="#/games/{{game._id}}">{{game.title}}</a>
     </li>
 

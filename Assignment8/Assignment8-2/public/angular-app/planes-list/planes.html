@@ -1,0 +1,9 @@
+<h1>{{vm.name}}</h1>
+
+
+<ul>
+    <li ng-repeat="plane in vm.planes | orderBy:'name'">
+        <a ng-href="#/planes/{{plane._id}}">{{plane.name}}</a>
+    </li>
+
+</ul>

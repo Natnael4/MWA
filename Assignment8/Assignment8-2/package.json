@@ -1,14 +1,14 @@
 {
-  "name": "assignment5-5",
+  "name": "assignmentphp",
   "version": "1.0.0",
-  "description": "Code for assignment 5 question 5",
+  "description": "Code for assignment PHP.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
   "keywords": [
-    "assignment"
+    "assignnment"
   ],
   "author": "Natnael Gezae",
   "license": "ISC",

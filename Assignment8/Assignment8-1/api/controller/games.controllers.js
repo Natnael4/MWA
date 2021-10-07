@@ -7,8 +7,8 @@ const Game = mongoose.model("Game");
 
 module.exports.gamesGetAll = function (req, res) {
     var offset = 0;
-    var count = 50;
-    var maxCount = 52;
+    var count = 8;
+    var maxCount = 12;
     if (req.query && req.query.offset) {
         offset = parseInt(req.query.offset, 10);
     }
