@@ -1,0 +1,40 @@
+
+
+<link rel="stylesheet" href="../../css/planes.css">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid"  style="height: 20px;">
+         
+            <a class="nav-link active" href="#/">Home
+            
+            </a>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="text" placeholder="Search" ng-model="searchText">
+        
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    
+  </div>
+</nav>
+
+    <h1 style="color:rgb(236, 210, 176)">{{vm.name}}</h1>
+
+<ul class="list-group">
+
+    <li ng-repeat="plane in vm.planes | filter:searchText"  style="color:rgb(51, 19, 19) ; font-weight:bolder;" class="list-group-item d-flex justify-content-between">
+         {{plane.name }}
+        <button class="btn btn-outline-dark btn-sm"><a ng-href="#/planes/{{plane._id}}" style="color:rgb(0, 0, 0)"> select</a></button><br/> 
+    </li>
+  </ul>
+
+
+    <button id ="but2" ng-click="vm.pr()"   class="btn btn-danger">Prev</button>
+    <button id ="but3" ng-click="vm.ne()"   class="btn btn-danger">Next</button><br/>
+
+
+    <form name="vm.planeForm" ng-submit="vm.addAPlane()"  class="form-group">
+       <h3>To add a new Plane please fill in all the fields below:</h3>
+        Name: <input type="text"  name="name" required ng-model="vm.newPlaneName" style="color:black" /><BR />
+        Country: <input type="text" name="country" required ng-model="vm.newPlaneCountry" style="color:black" /><BR />
+        Created On: <input type="date" name="created" required ng-model="vm.newPlaneCreated" style="color:black" /><BR />
+        <button type="submit" class="btn btn-success">Add Plane</button><BR/> </form>

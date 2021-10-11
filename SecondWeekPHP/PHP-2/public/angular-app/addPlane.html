@@ -1,0 +1,13 @@
+
+<button><a ng-href="#/planes/"   style="color:rgb(27, 0, 61)">back</a></button><br/>
+
+<form name="vm.planeForm" ng-submit="vm.addAPlane()"  class="form-group">
+    To add a new Plane please fill in all the fields below:<BR />
+    Name: <input type="text"  name="name" required ng-model="vm.newPlaneName" style="color:black" /><BR />
+    Country: <input type="text" name="country" required ng-model="vm.newPlaneCountry" style="color:black" /><BR />
+    Created On: <input type="date" name="created" required ng-model="vm.newPlaneCreated" style="color:black" /><BR />
+    <button type="submit" class="btn btn-success">Add Plane</button><BR/> </form>
+
+
+
+    

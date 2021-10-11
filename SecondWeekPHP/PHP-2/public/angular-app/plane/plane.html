@@ -1,0 +1,48 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid"  style="height: 20px;">
+        <ul class="navbar-nav me-auto">  
+              <a class="nav-link active" ng-href="#/">Home</a>
+              <a ng-href="#/planes"  class="nav-link active" >back</a>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-sm-2" type="text" placeholder="Search" ng-model="searchText">
+          
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        
+      
+    </div>
+  </nav>
+    <h1 style="color:rgb(0, 0, 0)">Plane </h1>
+
+
+<div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+    <div class="card-header">
+        {{vm.plane.name}}
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <span >Country : </span>{{vm.plane.country}} <br/>
+        <span >Started Service : </span>  {{vm.plane.created | date:"short"}} <br/>
+        <span >Used by : 
+            <ol>
+                <li ng-repeat="plane in vm.plane.UserCountries">
+                    {{plane.name}}<br/>
+                    Fleet Number : {{plane.fleetNum}}
+                </li>
+            </ol>
+        </span> <br/>
+                    
+    </p>
+    </div>
+  </div>
+
+
+
+
+<button class="btn btn-primary" ng-click="vm.deleteAPlane()">
+    <a ng-href="#/planes/"   style="color:rgb(27, 0, 61)">Delete</a></button>
+
+
+
