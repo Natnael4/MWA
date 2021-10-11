@@ -1,4 +1,9 @@
-/* #bu1{
-    position: relative;
+#bu1{
+    position: absolute;
     right: 0;
-} */
+}
+
+#bu2{
+    position: absolute;
+    right: 0;
+}

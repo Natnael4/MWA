@@ -5,7 +5,7 @@ function CountryFactory($http){
         getAllCountry : getAllCountry,
         addACountry : addCountry,
         deleteACountry : deleteCountry,
-        getOneCountry: getOne
+        // getOneCountry: getOne
         
     };
 
@@ -18,9 +18,9 @@ function CountryFactory($http){
     //     return $http.get("/api/planes/"+planeId).then(complete).catch(failed);
     // };
 
-    // function deleteCountry(planeId){
-    //     return $http.delete("/api/planes/"+planeId+"/userCountries/"+userCountriesId).then(complete).catch(failed);userCountriesId
-    // };
+    function deleteCountry(planeId, userCountriesId){
+        return $http.delete("/api/planes/"+planeId+"/userCountries/"+userCountriesId).then(complete).catch(failed);userCountriesId
+    };
 
     function addCountry(planeId, country){
         return $http.post("/api/planes/"+planeId+"/userCountries", country).then(complete).catch(failed);

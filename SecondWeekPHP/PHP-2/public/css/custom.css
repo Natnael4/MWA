@@ -18,3 +18,13 @@ background-color:
 #000000;
 padding-top: 5px;
 }
+
+#but3{
+    position: absolute;
+    right: 44%;
+}
+
+#but2{
+    position: absolute;
+    left: 44%;
+}

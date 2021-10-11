@@ -17,6 +17,14 @@ function config($routeProvider){
         templateUrl:"angular-app/addPlane.html",
         controller:"PlanesController",
         controllerAs:"vm"
+    }).when("/planes/:planeId/userCountries",{
+        templateUrl:"angular-app/countries/countries.html",
+        controller:"CountriesController",
+        controllerAs:"vm"
+    }).when("/register", {
+        templateUrl:"angular-app/register/register.html",
+        controller:"RegisterController",
+        controllerAs:"vm",
     }).otherwise({
         redirectTo:"/"
     })

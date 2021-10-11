@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const controllerPlanes = require("../controller/planes.controller");
 const controllerUserCountries = require("../controller/userCountries.controller");
+const controllerUsers = require("../controller/usersController");
 
 
 
@@ -24,6 +25,12 @@ router.route("/planes/:planeId/userCountries").get(controllerUserCountries.getAl
 router.route("/planes/:planeId/userCountries/:userCountriesId").get(controllerUserCountries.getOneUserCountry)
                                                       .put(controllerUserCountries.userCountryUpdate)
                                                       .delete(controllerUserCountries.userCountryDelete);
+
+
+
+//Users Route********************************************************************
+router.route("/users").post(controllerUsers.register);
+
 
 
 module.exports = router;

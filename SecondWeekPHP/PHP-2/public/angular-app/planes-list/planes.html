@@ -1,6 +1,6 @@
 
 
-<link rel="stylesheet" href="../../css/planes.css">
+<link rel="stylesheet" href="../../css/custom.css">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid"  style="height: 20px;">
@@ -28,13 +28,22 @@
   </ul>
 
 
-    <button id ="but2" ng-click="vm.pr()"   class="btn btn-danger">Prev</button>
-    <button id ="but3" ng-click="vm.ne()"   class="btn btn-danger">Next</button><br/>
-
-
+<div>
     <form name="vm.planeForm" ng-submit="vm.addAPlane()"  class="form-group">
        <h3>To add a new Plane please fill in all the fields below:</h3>
-        Name: <input type="text"  name="name" required ng-model="vm.newPlaneName" style="color:black" /><BR />
-        Country: <input type="text" name="country" required ng-model="vm.newPlaneCountry" style="color:black" /><BR />
-        Created On: <input type="date" name="created" required ng-model="vm.newPlaneCreated" style="color:black" /><BR />
-        <button type="submit" class="btn btn-success">Add Plane</button><BR/> </form>
+       <p><label>Name:</label>
+         <input type="text"  name="name" required ng-model="vm.newPlaneName" style="color:black" /><BR /></p>
+         <p><label>Country:</label>
+         <input type="text" name="country" required ng-model="vm.newPlaneCountry" style="color:black" /><BR /></p>
+        <p><label>Created On:</label>
+        <input type="date" name="created" required ng-model="vm.newPlaneCreated" style="color:black" /><BR /></p>
+        <button type="submit" class="btn btn-success">Add Plane</button><BR/> 
+    </form>
+  </div>
+
+
+
+
+
+        <button id ="but2" ng-click="vm.pr()"   class="btn btn-danger">Prev</button>
+        <button id ="but3" ng-click="vm.ne()"   class="btn btn-danger">Next</button><br/>

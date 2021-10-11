@@ -2,6 +2,7 @@ require("dotenv").config({"path":".env"});
 const mongoose = require ("mongoose");
 const dbURL = process.env.dbURL;
 require("./planes-modelSchema");
+require("./users-model");
 
 mongoose.connect(dbURL);
 

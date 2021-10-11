@@ -6,7 +6,8 @@ function PlaneFactory($http){
         getOnePlane: getOne,
         getAllOffset : getAllOffset,
         deleteAPlane : deletePlane,
-        addAPlane : addPlane
+        addAPlane : addPlane,
+        updateAPlane: updatePlane
     };
 
     function getAllPlanes(){
@@ -28,6 +29,10 @@ function PlaneFactory($http){
     function addPlane(plane){
         return $http.post("/api/planes", plane).then(complete).catch(failed);
     }
+
+    function updatePlane(planeId ,data){
+        return $http.put("/api/planes/" + planeId , data).then(complete).catch(failed);
+    };
 
     function complete(response){
         console.log(response.data);

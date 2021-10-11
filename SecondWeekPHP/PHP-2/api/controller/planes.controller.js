@@ -94,10 +94,10 @@ module.exports.updatePlane = function (req, res) {
         if (response.status !== 204) {
             res.status(response.status).json(response.message);
         } else {
-           
             plane.name = req.body.name;
             plane.country = req.body.country; 
             plane.created = req.body.created; 
+            
             plane.save(function (err, updatedPlanes) {
                 if (err) {
                     res.status(500).json(err);

@@ -49,7 +49,11 @@ module.exports.userCountryAdd = function (req, res) {  //Route:("/planes/:planeI
             res.status(404).json({ "message": "plane ID not found" + planeId });
         }
         else{
-            const newUserCountry = req.body.UserCountries;
+            // const newUserCountry = req.body.UserCountries;
+            const newUserCountry ={
+                name:req.body.name,
+                fleetNum:req.body.fleetNum
+            }
             plane.UserCountries.push(newUserCountry);
             plane.save(function(err, addedUserCountry){
                 if(err){

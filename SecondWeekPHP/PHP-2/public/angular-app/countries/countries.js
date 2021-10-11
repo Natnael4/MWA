@@ -3,29 +3,27 @@ angular.module("planeApp").controller("CountriesController",CountriesController)
 
 
 
-function CountriesController(CountryFactory) {
+function CountriesController(CountryFactory, $routeParams) {
     const vm = this;
     vm.name = "Countries Available";
-
+    const id = $routeParams.planeId;
+    vm.id = $routeParams.planeId;
     vm.isSubmitted = false;
   
-        CountryFactory.getAllOffset(offset).then(function (response) {
-            vm.planes = response;
+        CountryFactory.getAllCountry(id).then(function (response) {
+            vm.countries = response;
 
         });
-  
-
-
         vm.addACountry = function () {
+            const id = $routeParams.planeId;
             const postData = {
                 name: vm.newCountryName,
-                FleetNum: vm.newFleetNum,
+                fleetNum: vm.newFleetNum
             
             };
     
-            if (vm.planeForm.$valid) {
-                CountryFactory.addACountry(postData).then(function (response) {
-                    console.log("Country added and saved");
+            if (vm.countryForm.$valid) {
+                CountryFactory.addACountry(id,postData).then(function (response) {
                 }).catch(function (error) {
                     console.log(error);
                 });
@@ -33,6 +31,15 @@ function CountriesController(CountryFactory) {
                 vm.isSubmitted = true;
             }
     
+        }
+
+
+        vm.deleteACountry = function(usrid){
+            const id = $routeParams.planeId;
+            
+            CountryFactory.deleteACountry(id,usrid).then(function(response){
+                console.log("Country deleted");
+            });
         }
 
 
