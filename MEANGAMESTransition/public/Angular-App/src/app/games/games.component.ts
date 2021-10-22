@@ -37,10 +37,9 @@ export class GamesComponent implements OnInit {
   }
 
   getAll(value:number){
-    // if(!value){
-    //   this.offset=0;
+
       this._gamesDataService.getGames(this.offset).then(response => this.games = response)
-    // }
+
   }
 
   next():void{

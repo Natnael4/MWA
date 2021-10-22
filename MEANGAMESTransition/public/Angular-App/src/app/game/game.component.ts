@@ -16,13 +16,11 @@ export class GameComponent implements OnInit {
   updategame = new Game();
   err!:string;
   message!:string;
-  // ratingArray!: any[];
-  constructor(private _gamesDataService:GamesDataService, private _route:ActivatedRoute) { }
+  constructor(private gamesDataService:GamesDataService, private _route:ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = this._route.snapshot.params['gameId'];
-    this._gamesDataService.getGame(id).then(response=>this.game=response);
-    // this.ratingArray = new Array(this.game.rate);
+    this.gamesDataService.getGame(id).then(response=>this.game=response);
   }
 
   onSubmit(): void{
@@ -31,7 +29,7 @@ export class GameComponent implements OnInit {
       this.err = "Please fill the empty fields";
     }else{
       const id = this._route.snapshot.params['gameId'];
-      this._gamesDataService.updateGame(id,this.game);
+      this.gamesDataService.updateGame(id,this.game);
       this.message = "Game updated";
       setTimeout(()=>{
         this.message=""
@@ -40,7 +38,7 @@ export class GameComponent implements OnInit {
   }
 
   deleteGame(gameId:string){
-    this._gamesDataService.deleteGame(gameId);
+    this.gamesDataService.deleteGame(gameId);
   }
 
 }

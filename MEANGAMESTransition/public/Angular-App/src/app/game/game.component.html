@@ -1,5 +1,5 @@
 <h3>{{game.title}}
-    <!-- <span *ngFor="let rate of ratingArray">&#9733;</span> -->
+
 </h3>
 <div style="padding-left: 1%;">
     <p>
@@ -8,7 +8,7 @@
         Minimum Players: {{game.minPlayers}}<br />
         Minimum Players: {{game.maxPlayers}}<br />
         Minimum age: {{game.minAge}}<br />
-        <!-- rating:{{game.rate}} -->
+       
     </p>
 </div>
 
@@ -24,14 +24,14 @@
     <form #gameForm="ngForm" (ngSubmit)="onSubmit()" style="position: fixed;bottom: 110px;" novalidate>
         <h4>Update Game</h4>
         <label>Title</label><br>
-        <input type="text" name="title" id="title" size="21" placeholder="title" [(ngModel)]=game.title required
+        <input type="text" name="title" id="title" size="21" placeholder="title" [(ngModel)]=game.title 
             required #title="ngModel"><br>
         <label>Price</label><br>
-        <input type="number" name="price" id="price" placeholder="price" [(ngModel)]=game.price required required
+        <input type="number" name="price" id="price" placeholder="price" [(ngModel)]=game.price required 
             #price="ngModel"><br>
         <label>Minimum Players</label><br>
         <input type="number" name="minPlayers" id="minPlayers" placeholder="Minimum Players" [(ngModel)]=game.minPlayers
-            required required #price="ngModel"><br>
+            required #price="ngModel"><br>
         <br />
         <button type="submit" class="btn btn-success">Update Game</button>
     </form>
