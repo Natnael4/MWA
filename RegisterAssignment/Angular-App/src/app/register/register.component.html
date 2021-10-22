@@ -1,0 +1,36 @@
+<div *ngIf="message" class="alert alert-success" role="alert">
+    <p>{{message}}</p>
+</div>
+<div *ngIf="err" class="alert alert-danger" role="alert">
+    <p>{{err}}</p>
+</div>
+
+
+<h4>Register</h4>
+<form #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <div style="margin-left: 15px;">
+        <div class="form-group">
+            <label class="form-control-plaintext">Username</label>
+            <input type="text" name="username" size="21" placeholder="username" [(ngModel)]=user.username required
+                #username="ngModel" style="width: 30%;" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="form-control-plaintext">Password</label>
+            <input type="password" name="password" size="21" placeholder="password" [(ngModel)]=user.password required
+                #password="ngModel" style="width: 30%;" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="form-control-plaintext">PasswordRepeat</label>
+            <input type="password" name="passwordRepeat" size="21" placeholder="passwordRepeat"
+                [(ngModel)]=user.passwordRepeat required #passwordRepeat="ngModel" style="width: 30%;"
+                class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="form-control-plaintext">Name</label>
+            <input type="text" name="name" size="21" placeholder="name" [(ngModel)]=user.name required #name="ngModel"
+                style="width: 30%;" class="form-control">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Register</button>
+    </div>
+</form>

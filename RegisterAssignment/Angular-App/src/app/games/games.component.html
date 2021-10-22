@@ -1,0 +1,20 @@
+<h1 style="color:rgb(236, 210, 176)">MEAN GAMES APP</h1>
+<ul>
+  <li *ngFor="let game of games">
+    <a routerLink="/games/{{game._id}}">{{game.title}}
+    </a>
+  </li>
+</ul>
+
+
+
+<div style="position: absolute; left:45%; bottom:15%;">
+  <ul class="pagination pagination-lg">
+    <li>
+      <button class="page-link btn-danger" (click)="prev()">Prev</button>
+    </li>
+    <li>
+      <button class="page-link btn-danger" (click)="next()">Next</button>
+    </li>
+  </ul>
+</div>
