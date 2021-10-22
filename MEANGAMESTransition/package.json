@@ -1,0 +1,25 @@
+{
+  "name": "assignment5-5",
+  "version": "1.0.0",
+  "description": "Code for assignment 5 question 5",
+  "main": "app.js",
+
+  "scripts": {
+    "startBackend": "nodemon app.js",
+    "startFrontend": "cd ./public/Angular-App && npm start",
+    "start": "npm-run-all --parallel  startBackend startFrontend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "assignment"
+  ],
+  "author": "Natnael Gezae",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.2",
+    "mongoose": "^6.0.8"
+  }
+}

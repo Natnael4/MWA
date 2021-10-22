@@ -1,0 +1,38 @@
+<h3>{{game.title}}
+    <!-- <span *ngFor="let rate of ratingArray">&#9733;</span> -->
+</h3>
+<div style="padding-left: 1%;">
+    <p>
+        Price: {{game.price | currency}}<a routerLink="/games"><button type="button" class="btn btn-danger btn-sm"
+                (click)="deleteGame(game._id)">Delete</button></a><br />
+        Minimum Players: {{game.minPlayers}}<br />
+        Minimum Players: {{game.maxPlayers}}<br />
+        Minimum age: {{game.minAge}}<br />
+        <!-- rating:{{game.rate}} -->
+    </p>
+</div>
+
+<div *ngIf="message" class="alert alert-success" role="alert">
+    <p>{{message}}</p>
+</div>
+<div *ngIf="err" class="alert alert-danger" role="alert">
+    <p>{{err}}</p>
+</div>
+
+
+<div style="position: absolute; bottom: 17%; left:1%;">
+    <form #gameForm="ngForm" (ngSubmit)="onSubmit()" style="position: fixed;bottom: 110px;" novalidate>
+        <h4>Update Game</h4>
+        <label>Title</label><br>
+        <input type="text" name="title" id="title" size="21" placeholder="title" [(ngModel)]=game.title required
+            required #title="ngModel"><br>
+        <label>Price</label><br>
+        <input type="number" name="price" id="price" placeholder="price" [(ngModel)]=game.price required required
+            #price="ngModel"><br>
+        <label>Minimum Players</label><br>
+        <input type="number" name="minPlayers" id="minPlayers" placeholder="Minimum Players" [(ngModel)]=game.minPlayers
+            required required #price="ngModel"><br>
+        <br />
+        <button type="submit" class="btn btn-success">Update Game</button>
+    </form>
+</div>

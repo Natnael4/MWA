@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="../../css/custom.css">
+
+<!-- the navigation bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid" style="height: 30px;">
+        <ul class="navbar-nav me-auto">
+            <a class="nav-link active" ng-href="#/">Home</a>
+            <!-- <a class="nav-link active" ng-href="#/addGame">Add-Game</a> -->
+            <a class="nav-link active" ng-href="#/register">Register</a>
+            <a class="nav-link active" ng-href="#/games">Games</a>
+        </ul>
+        <form class="d-flex">
+            <input class="form-control me-sm-2" type="text" placeholder="Search" ng-model="searchText">
+        </form>
+    </div>
+</nav>
+
+<!-- the title -->
+<h1 style="color:rgb(236, 210, 176)">{{vm.title}}</h1>
+
+<ul>
+    <li ng-repeat="game in vm.games | filter:searchText">
+        <a ng-href="#/games/{{game._id}}">{{game.title}}</a>
+    </li>
+
+</ul>
+
+<!-- the paginations -->
+<div class="buttonsandforms">
+    <ul class="pagination pagination-lg">
+        <button id="but2" ng-click="vm.pr()" class="page-link btn-danger">Prev</button>
+        <button id="but3" ng-click="vm.ne()" class="page-link btn-danger">Next</button><br />
+    </ul>
+    
+</div>
+
+
+<!-- Error and success messages ****************************************************-->
+<div class="succesanderrormessages">
+    <div ng-if="vm.message" class="alert alert-success" role="alert">
+        <p>{{ vm.message}}</p>
+    </div>
+    <div ng-if="vm.err" class="alert alert-danger" role="alert">
+        {{vm.err}}
+    </div>
+</div>
+
+<!-- **********************************************************************************-->
+
+<div class="gamesAddform">
+    <form name="vm.gameForm" ng-submit="vm.addAGame()" class="form-group">
+        <h4>Add a new Game</h4>
+        <label>Title</label><br>
+        <input type="text" name="name" required ng-model="vm.newGameTitle" style="color:black" /><BR />
+        <label for="price">Price</label><br>
+        <input type="number" name="price" required ng-model="vm.newGamePrice" style="color:black" /><BR />
+        <label for="minplayers">Minimum Players</label><br>
+        <input type="number" name="minplayers" required ng-model="vm.newGamePlayers" style="color:black" /><br>
+        <br>
+        <button type="submit" class="btn btn-success">Add Game</button><BR />
+    </form>
+</div>

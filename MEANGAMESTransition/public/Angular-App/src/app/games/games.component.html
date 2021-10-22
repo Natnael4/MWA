@@ -1,0 +1,44 @@
+<h1 style="color:rgb(236, 210, 176)">MEAN GAMES APP</h1>
+<ul>
+  <li *ngFor="let game of games">
+    <a routerLink="/games/{{game._id}}">{{game.title}}
+    </a>
+  </li>
+</ul>
+
+<div *ngIf="message" class="alert alert-success" role="alert">
+  <p>{{message}}</p>
+</div>
+<div *ngIf="err" class="alert alert-danger" role="alert">
+  <p>{{err}}</p>
+</div>
+
+
+<div style="position: absolute; bottom: 17%; left:1%;">
+  <form #gameForm="ngForm" (ngSubmit)="onSubmit()" style="position: fixed;bottom: 110px;">
+    <h4>Add a new game</h4>
+    <label>Title</label><br>
+    <input type="text" name="title" id="title" placeholder="title" [(ngModel)]=game.title required
+      #title="ngModel"><br>
+    <label>Price</label><br>
+    <input type="number" name="price" id="price" placeholder="price" [(ngModel)]=game.price required
+      #price="ngModel"><br>
+      <label>Minimum Age</label><br>
+    <input type="number" name="minAge" id="minAge" placeholder="Minimum Age" [(ngModel)]=game.minAge required
+      #minAge="ngModel"><br>
+    <br>
+    <button type="submit" class="btn btn-success">Add Game</button>
+  </form>
+</div>
+
+
+<div style="position: absolute; left:45%; bottom:15%;">
+  <ul class="pagination pagination-lg">
+    <li>
+      <button class="page-link btn-danger" (click)="prev()">Prev</button>
+    </li>
+    <li>
+      <button class="page-link btn-danger" (click)="next()">Next</button>
+    </li>
+  </ul>
+</div>

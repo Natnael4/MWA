@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid" style="height: 30px;">
+    <ul class="navbar-nav me-auto">
+      <a class="nav-link active" href="#/">Home</a>
+      <a class="nav-link active" href="#/register">Register</a>
+      <a class="nav-link active" href="#/games">Games</a>
+    </ul>
+  </div>
+</nav>
+
+<h4>Register</h4>
+<div ng-if="vm.message" class="alert alert-success" role="alert">
+  <p>{{ vm.message}}</p>
+</div>
+<div ng-if="vm.err" class="alert alert-danger" role="alert">
+  {{vm.err}}
+</div>
+<form ng-hide="vm.message" name="register" ng-submit="vm.register()">
+  <div style="margin-left: 15px;"> 
+    <div class="form-group">
+      <label for="username" class="form-control-plaintext">Username</label>
+      <input type="username" class="form-control" id="username" placeholder="Username" ng-model="vm.username"
+        autocapitalize="none" style="width: 30%;" />
+    </div>
+    <div class="form-group">
+      <label for="password" class="form-control-plaintext">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password" ng-model="vm.password"
+        autocapitalize="none" style="width: 30%;" />
+    </div>
+    <div class="form-group">
+      <label for="password-repeat"class="form-control-plaintext">Repeat Password</label>​
+      <input type="password" class="form-control" id="password-repeat" placeholder="Password Repeat"
+        ng-model="vm.passwordRepeat" autocapitalize="none" style="width: 30%;" />
+    </div>
+    <div class="form-group">
+      <label for="name" class="form-control-plaintext">Name</label>
+      <input type="name" class="form-control" id="name" placeholder="Name" ng-model="vm.name" autocapitalize="none"
+        style="width: 30%;" />
+    </div><br>​
+    <button type="submit" class="btn btn-success">Register</button>
+  </div>​
+</form>

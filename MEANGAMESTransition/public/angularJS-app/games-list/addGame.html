@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid" style="height: 30px;">
+        <ul class="navbar-nav me-auto">
+            <a class="nav-link active" ng-href="#/">Home</a>
+            <a class="nav-link active" ng-href="#/games">Games</a>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- Error and success messages ****************************************************-->
+<div class="succesanderrormessages">
+    <div ng-if="vm.message" class="alert alert-success" role="alert">
+        <p>{{ vm.message}}</p>
+    </div>
+    <div ng-if="vm.err" class="alert alert-danger" role="alert">
+        {{vm.err}}
+    </div>
+</div>
+
+<!-- **********************************************************************************-->
+
+<div class="gamesAddform">
+    <form name="vm.gameForm" ng-submit="vm.addAGame()" class="form-group">
+        <h4>Add a new Game</h4>
+        <label>Title</label><br>
+        <input type="text" name="name" required ng-model="vm.newGameTitle" style="color:black" /><BR />
+        <label for="price">Price</label><br>
+        <input type="number" name="price" required ng-model="vm.newGamePrice" style="color:black" /><BR />
+        <label for="minplayers">Minimum Players</label><br>
+        <input type="number" name="minplayers" required ng-model="vm.newGamePlayers" style="color:black" /><br>
+        <br>
+        <button type="submit" class="btn btn-success">Add Game</button><BR />
+    </form>
+</div>
